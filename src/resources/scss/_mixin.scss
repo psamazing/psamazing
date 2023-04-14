@@ -1,0 +1,87 @@
+$baseFontSize: 10;
+@function px($pixels, $context: $baseFontSize) {
+  @return calc(($pixels) / $context * 1rem);
+}
+
+@function pxm($px, $context: $baseFontSize) {
+  @return calc(($px / 2) / $context * 1rem);
+}
+
+$urlImg: '../images/';
+$baseColor: #869BDB;
+
+@mixin position(
+  $p: absolute,
+  $t: null,
+  $b: null,
+  $l: null,
+  $r: null
+) {
+  position: $p;
+  top: $t;
+  bottom: $b;
+  left: $l;
+  right: $r;
+}
+
+@mixin blind {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+@mixin bg($name, $path:'../images/', $format:'png'){
+    background:url('#{$path}#{$name}.#{$format}') no-repeat;
+}
+@mixin elip($ty) {
+    line-height: 1.35;
+    @if $ty == 'l1' {
+      display: inline-block;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      word-wrap: normal;
+      overflow: hidden;
+      max-width: 100%;
+    } @else if $ty == 'l2' {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* 라인수 */
+      -webkit-box-orient: vertical;
+      word-wrap: break-word;
+    }
+}
+
+@mixin checkbox {
+    display: inline-block;
+    position: relative;
+    input {
+      @include blind;
+    }
+    input + label {
+      display: inline-block;
+      position: relative;
+      cursor: pointer;
+      &:before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+    }
+  }
+  
+  // media
+  @mixin mq($screen-width) {
+    @if $screen-width == 'small' {
+      @media all and (max-width: 320px) {
+        @content;
+      }
+    } @else if $screen-width == 'fold' {
+      @media all and (min-width: 640px) {
+        @content;
+      }
+    }
+  }

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANGAH'S PORTFOLIO</title>
+    <link rel="stylesheet" href="../resources/css/style.css" type="text/css">
+    <script type="text/javascript" src="../resources/js/jquery-1.8.3.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery.fullpage.js"></script>
+<body>
+    <div id="wrap">
+        @@include('./include/header.html')
+        <div id="fullpage">
+            <div class="section section1">
+                <div class="left-tit">
+                    <p>함께 일할 퍼블리셔를</p>
+                    <p>찾고계신가요?</p> 
+                </div>   
+                <div class="play-bar">
+                    <div class="play-bar-box">
+                        <span class="bar full-bar"></span>
+                    </div>
+                </div>
+                <div class="right-tit">
+                    <ul class="right-tit-keyword">
+                        <li>Publishing</li>
+                        <li>Collaborate</li>
+                        <li>Skills</li>
+                    </ul>  
+                    <p class="typing"></p>   
+                </div>  
+                <div class="intro-txt">
+                    <p>
+                        반갑습니다!<br/> 
+                        다양한 직군과 함께 협력하여<br/> 
+                        사용자에게 편하고 즐거운 UX를 만드는데<br/> 
+                        관심이 많은 퍼블리셔 박상아입니다.
+                    </p>
+                </div>     
+            </div> 
+            <div class="section section2">
+                <div class="con-wrap">
+                    <div class="content2">
+                        <div class="con-tit">
+                            <p class="con-tit-t02">Career, Edu and Profile</p>
+                            <p class="con-tit-t01">About Me</p>
+                        </div>
+                        <div class="con-three">
+                            <div class="item" >
+                                <div class="t01">
+                                    <p>Career</p>
+                                </div>
+
+                                <div class="line"></div>
+                                
+                                <div class="t02">
+                                    <div class="txt-wrap">
+                                        <em>2022.02 ~ 2023.04</em> <strong>(주)헥토이노베이션</strong>
+                                        <p>UX팀 퍼블리셔 구축/운영 업무</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2021.09 ~ 2022.01</em> <strong>신한은행</strong>
+                                        <p>프리랜서 쏠탭 구축업무</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2021.01 ~ 2021.07</em> <strong>스마트퓨쳐</strong>
+                                        <p>개발팀 주임</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2018.03 ~ 2020.11</em> <strong>이메딕팜넷</strong>
+                                        <p>개발팀 사원</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2016.03 ~ 2017.03</em> <strong>모노쉬프트</strong>
+                                        <p> 기획팀 사원 (유한킴벌리파견 - 맘큐 사이트 운영)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="t01">
+                                    <p>Education</p>
+                                </div>
+                                <div class="line"></div>
+                                <div class="t02">
+                                    <div class="txt-wrap">
+                                        <em>2017.06 ~ 2018.01</em>
+                                        <p>(NCS)UI/UX 디자인 (웹&앱디자인)</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2020.02 ~ 2020.03</em>
+                                        <p>자바스크립트 , 제이쿼리 중급 스터디</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="t01">
+                                    <p>Profile</p>
+                                </div>
+                                <div class="line"></div>
+                                <div class="t02">
+                                    <div class="txt-wrap">
+                                        <em>2020. 10 ~ 2021. 08</em>
+                                        <p>컴퓨터공학과 학사 취득(학점은행제)</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2019.11.22</em>
+                                        <p>정보처리기사 자격증 취득</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2018.03.30</em>
+                                        <p>웹디자인기능사 자격증 취득</p>
+                                    </div>
+                                    <div class="txt-wrap">
+                                        <em>2013.02 ~ 2016.02</em>
+                                        <p>한양여자대학교 정보경영과 전공</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section5">
+                @@include('./include/footer.html') 
+            </div>   
+        </div>
+    </div>    
+</body>
+<script>
+var typingBool = false; 
+var typingIdx=0; 
+var liIndex = 0;
+var liLength = $(".right-tit-keyword>li").length;
+
+// 타이핑될 텍스트를 가져온다 
+var typingTxt = $(".right-tit-keyword>li").eq(liIndex).text(); 
+typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
+if(typingBool==false){ // 타이핑이 진행되지 않았다면 
+    typingBool=true; 
+    var tyInt = setInterval(typing,120);
+} 
+     
+function typing(){ 
+  if(typingIdx<typingTxt.length){ // 타이핑될 텍스트 길이만큼 반복 
+     $(".typing").append(typingTxt[typingIdx]); // 한글자씩 이어준다. 
+     typingIdx++; 
+   } else{ //한문장이끝나면
+     //다음문장으로.. 마지막문장이면 다시 첫번째 문장으로 
+     if(liIndex>=liLength-1){
+       liIndex=0;
+     }else{
+       liIndex++; 
+     }
+     
+     //다음문장을 타이핑하기위한 셋팅
+        typingIdx=0;
+        typingBool = false; 
+        typingTxt = $(".right-tit-keyword>li").eq(liIndex).text(); 
+       
+     //다음문장 타이핑전 1초 쉰다
+         clearInterval(tyInt);
+         setTimeout(function(){
+            $(".typing").html('');
+           tyInt = setInterval(typing,120);
+         },3200);
+    } 
+
+}  
+var w = $(window).width();
+var h = $(window).height();
+
+
+
+$(document).ready(function(){
+    $("#fullpage").fullpage({		
+        responsiveWidth: 980,
+		responsiveSlides: true,
+		parallax: true,
+        navigation: true,
+        navigationPosition:"ture",
+        anchors:["section01","section02","section03","section04","section05","section06"],
+        navigationTooltips:["","","","","",""],
+        menu:"#gnb",
+
+		afterLoad: function(origin, destination, direction){
+		
+
+				if ( destination ==  2 ){
+				
+				
+				}
+
+
+		},
+
+
+        onLeave: function(origin, destination, direction){
+
+				//네비게이션 넘버링
+				if ( destination ==  1 ){
+
+					$("body:not('.fp-responsive')").find("#header").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".f_nav_wrap").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".company_introduction").removeClass("on").show();
+				
+				} else if ( destination ==  2 ){
+
+					$("body:not('.fp-responsive')").find("#header").addClass("on").show();
+					$("body:not('.fp-responsive')").find(".f_nav_wrap").addClass("on").show();
+					$("body:not('.fp-responsive')").find(".company_introduction").addClass("on").show();
+
+				
+				} else if ( destination ==  3 ){
+
+					$("body:not('.fp-responsive')").find("#header").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".f_nav_wrap").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".company_introduction").removeClass("on").show();
+				
+
+				} else if ( destination ==  4 ){
+				
+					$("body:not('.fp-responsive')").find("#header").addClass("on").show();
+					$("body:not('.fp-responsive')").find(".f_nav_wrap").addClass("on").show();
+					$("body:not('.fp-responsive')").find(".company_introduction").addClass("on").show();
+
+				} else if ( destination ==  5 ){
+
+					$("body:not('.fp-responsive')").find("#header").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".f_nav_wrap").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".company_introduction").removeClass("on").show();
+
+				} else if ( destination ==  6 ){
+
+					$("body:not('.fp-responsive')").find("#header").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".f_nav_wrap").removeClass("on").show();
+					$("body:not('.fp-responsive')").find(".company_introduction").removeClass("on").show();
+
+				}
+
+
+        }
+    });
+	
+
+
+	//풀페이지 네비게이션 넘버링
+	$("#fp-nav").wrap("<div class='f_nav_wrap'></div>");
+	//$("#fp-nav").css({"margin-top":"0"});
+	//$(".f_nav_wrap").prepend("<div class='num this'>01</div>");
+	//$(".f_nav_wrap").append("<div class='num entire'>04</div>");
+	
+	
+});
+
+
+
+
+
+
+
+
+</script>    
+</html>
