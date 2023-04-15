@@ -1,0 +1,25 @@
+//animation - 마우스 휠 
+@keyframes wheel {
+    to {
+        opacity: 0;
+        top: px(30);
+    }
+}
+
+@-webkit-keyframes wheel {
+    to {
+        opacity: 0;
+        top: px(30);
+    }
+}
+
+//animation - 메인 바 
+@keyframes play_bar {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

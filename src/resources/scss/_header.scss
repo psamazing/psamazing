@@ -1,8 +1,8 @@
 //header
 header{
-    position:fixed;
-    top:0;
+    @include position($p:fixed,$t:0);
     width:100%;
+    z-index: 9;
     .logo{
         @include bg('logo');
         background-size: 100%;
@@ -21,9 +21,7 @@ header{
         }
         display:flex; 
         justify-content: space-between;
-        position: fixed;
-        top:0;
-        left:0;
+        @include position($p:fiexd,$t:0,$l:0);
         padding:0 px(80);
         width:100%;
         height:px(100);
@@ -46,7 +44,7 @@ header{
                 font-size:px(20);
                 font-weight: 500;
                 &.active{
-                    color:#869bdb;
+                    color:$baseColor;
                 }
             }
         }

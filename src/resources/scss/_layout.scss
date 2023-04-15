@@ -7,6 +7,7 @@
     .section{overflow:hidden;}
 
     .section1{
+        background:#fff;
         .left-tit{
             @include position($t:45%, $l:20%);
             transform: translate(-50%,-50%);
@@ -62,15 +63,6 @@
                     }
                 }
             }
-            @keyframes play_bar {
-                0% {
-                    width: 0;
-                }
-            
-                100% {
-                    width: 100%;
-                }
-            }
         }
         .intro-txt{
             @include position($b:27%);
@@ -85,9 +77,43 @@
                 line-height: px(40);
             }
         }
+        .scroll-ani{
+            @include position($l:45%,$b:19%);
+            transform: translate(50%,50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-mouse {
+                width:px(33);
+                height: px(45);
+                border: px(2) solid #555;
+                border-radius: px(100);
+                position: relative;
+                &::before {
+                    content: '';
+                    width: px(4);
+                    height: px(4);
+                    @include position($t:10px, $l:50%);
+                    transform: translateX(-50%);
+                    background-color: #555;
+                    border-radius: 50%;
+                    opacity: 1;
+                    animation: wheel 2s infinite;
+                    -webkit-animation: wheel 2s infinite;
+                }
+               
+            }
+            span{
+                font-size:px(12);
+                margin-top:px(10);
+            }
+        }
+      
+       
     
     }
     .section2{
+        background:#fff;
         .con-wrap{
             position: relative;
             height: 100%;
@@ -96,7 +122,7 @@
             flex-wrap: wrap;
             align-items: center;
             padding: 0 7%;
-            .content2{
+            .content{
                 width: 100%;
                 margin-top:px(-50);
                 .con-tit{
@@ -169,10 +195,71 @@
                     }
                 }
             }
-            
         }
-       
     }
-
+    .section3{
+        .con-wrap{
+            position: relative;
+            height: 100%;
+            z-index: 3;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 0 7%;
+            background:#222;
+            .content{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                .con-tit{
+                    width:70%;
+                    &-t02{
+                        position: relative;
+                        font-size: px(28);
+                        font-weight: 700;
+                        margin-bottom: px(15);
+                        color: #869BDB
+                    }
+                    &-t01{
+                        position: relative;
+                        font-size: px(80);
+                        font-weight: 700;
+                        color: #fff;
+                        margin-bottom:px(50);
+                    }
+                }
+                .con-box{
+                    margin-top:px(-60);
+                    .skill-list {
+                        position: relative;
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        gap: 30px;
+                        li{
+                            padding: 20px;
+                            color: #fff;
+                            border: 1px solid rgba(255,255,255,.4);
+                            background: rgba(255,255,255,0);
+                            height: 100%;
+                            &:nth-child(2n) {
+                                margin-top: px(60);
+                            }
+                            .name{
+                                position: relative;
+                                font-size: px(20);
+                                margin-top: px(56);
+                                line-height: 160%;
+                                font-weight: 500;
+                            }
+                            .desc{
+                                line-height: 1.7;
+                                font-size: px(15);
+                                letter-spacing: -.19px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 .f_nav_wrap{display: none !important;}
