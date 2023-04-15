@@ -116,3 +116,85 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+.slick-arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border:0;
+    font-size:0;
+    &.slick-prev{
+        background:url($urlImg+'ico_left_arrow.png');
+        right:calc(100% + 2.4rem);
+        width: 32px;
+        height: 32px;
+        animation: 1s ease-in-out 0s infinite alternate both running prevBtnAni;
+    }
+    &.slick-next{
+        background:url($urlImg+'ico_right_arrow.png');
+        left: calc(100% + 2.4rem);
+        width: 32px;
+        height: 32px;
+        animation: 1s ease-in-out 0s infinite alternate both running  nextBtnAni;
+    }
+    
+}
+
+@keyframes prevBtnAni{
+    0% {
+        right: calc(100% + 2.4rem);
+        opacity: 1;
+    }
+    100% {
+        right: calc(100% + 4rem);
+        opacity: 0.4;
+    }
+}
+@keyframes nextBtnAni{
+    0% {
+        left: calc(100% + 2.4rem);
+        opacity: 1;
+    }
+    100% {
+        left: calc(100% + 4rem);
+        opacity: 0.4;
+    }
+}
+.slick-dots{
+    position: absolute;
+    bottom: -66px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex !important;
+    text-align: center;
+    justify-content: center;
+    li{
+        button{
+            border-radius: 50%;
+            height: 1.2rem;
+            width: 1.2rem;
+            transform: scale(0.5);
+            border: 0px;
+            background-color: rgb(204, 204, 204);
+            opacity: 1;
+            transition: transform 0.3s ease 0s, background-color 0.3s ease 0s;
+            margin: 0px 0.3rem !important;
+            font-size: 0;
+            line-height: 0;
+            cursor: pointer;
+            color: transparent;
+            outline: none;
+        }
+        &.slick-active{
+            button{
+                transform: scale(1) !important;
+                background-color: $baseColor !important;;
+                box-shadow: rgba(134, 155, 219, 0.5) 0rem 0rem 0.8rem !important;;
+            }
+        }
+    }
+}
+
+

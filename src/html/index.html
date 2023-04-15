@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../resources/css/style.css" type="text/css">
     <script type="text/javascript" src="../resources/js/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="../resources/js/jquery.fullpage.js"></script>
+    <script type="text/javascript" src="../resources/js/slick.min.js"></script>
 <body>
     <div id="wrap">
         @@include('./include/header.html')
@@ -140,7 +141,7 @@
                                         viewBox="0 0 22.105 22.105" 
                                         xmlns="http://www.w3.org/2000/svg">
                                         <defs>
-                                            <style>.cls-1{fill:#fff;}</style>
+                                            <style>.cls-1{fill:#fff;} </style>
                                         </defs>
                                         <g data-name="Layer 2" id="Layer_2">
                                             <g data-name="Layer 1" id="Layer_1-2">
@@ -184,25 +185,52 @@
                 <div class="con-wrap">
                     <div class="content">
                         <div class="con-tit">
-                            <div class="con-tit-t02">My proficient</div>
-                            <div class="con-tit-t01">Skill</div>
+                            <div class="con-tit-t02">My Recent Project</div>
+                            <div class="con-tit-t01">Portfolio</div>
                         </div>
-                        <div class="portfolio_wrap">
-                            <div>
-                                <div class="port_img">
-                                    <p><img src="" alt=""></p>
+                        <div class="portfolio-wrap">
+                            <div class="slidewrap">
+                                <div class="port-img">
+                                    <img src="../resources/images/port_frog_mobile.png" alt="청개구리투자자문">
                                 </div>
-                                <div class="port_infotxt">
-                                    <h2>Title</h2>
-                                    <p>subTitle</p>
-                                    <ul class="port_keyword">
-                                        <li></li>
-                                        <li></li>
-                                        <li></li>
-                                    </ul>    
-                                    <button type="button">상세보기</button>
+                                <div class="port-infotxt">
+                                    <div>
+                                        <h2 class="port-tit">Mobile Web</h2>
+                                        <p class="port-subtit">투자자문 계약서 작성화면 구축</p>
+                                        <ul class="port-keyword">
+                                            <li># 퍼블리싱100%</li>
+                                            <li># HTML</li>
+                                            <li># CSS</li>
+                                            <li># Javascipt</li>
+                                            <li># jQuery</li>
+                                        </ul>
+                                    </div>    
+                                    <div class="btn-area">
+                                        <button type="button" class="port-more">상세보기</button>
+                                    </div>
                                 </div>
                             </div>    
+                            <div class="slidewrap">
+                                <div class="port-img">
+                                    <img src="../resources/images/port_emedic_mobile.png" alt="이메딕관리자">
+                                </div>
+                                <div class="port-infotxt">
+                                    <div>
+                                        <h2 class="port-tit">Mobile Web</h2>
+                                        <p class="port-subtit">관리자 웹앱 페이지 구축</p>
+                                        <ul class="port-keyword">
+                                            <li># 퍼블리싱100%</li>
+                                            <li># HTML</li>
+                                            <li># CSS</li>
+                                            <li># Javascipt</li>
+                                            <li># jQuery</li>
+                                        </ul>    
+                                    </div>
+                                    <div class="btn-area">
+                                        <button type="button" class="port-more">상세보기</button>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
                     </div>
                 </div>
@@ -257,6 +285,15 @@ var h = $(window).height();
 
 
 $(document).ready(function(){
+    $(".portfolio-wrap").slick({
+        dots: true,
+        arrows:true,
+        infinite: true,
+        autoplay:false,
+        slidesToShow: 1,
+        speed:2000
+    });
+
     $("#fullpage").fullpage({		
         responsiveWidth: 980,
 		responsiveSlides: true,

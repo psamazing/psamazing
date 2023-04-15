@@ -84,7 +84,7 @@
             flex-direction: column;
             align-items: center;
             &-mouse {
-                width:px(33);
+                width:px(30);
                 height: px(45);
                 border: px(2) solid #555;
                 border-radius: px(100);
@@ -121,7 +121,7 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            padding: 0 7%;
+            padding: 0 5%;
             .content{
                 width: 100%;
                 margin-top:px(-50);
@@ -204,7 +204,7 @@
             z-index: 3;
             display: flex;
             flex-wrap: wrap;
-            padding: 0 7%;
+            padding: 0 5%;
             background:#222;
             .content{
                 width: 100%;
@@ -217,7 +217,7 @@
                         font-size: px(28);
                         font-weight: 700;
                         margin-bottom: px(15);
-                        color: #869BDB
+                        color: $baseColor;
                     }
                     &-t01{
                         position: relative;
@@ -256,6 +256,124 @@
                                 letter-spacing: -.19px;
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+    .section4{
+        background:#fff;
+        .con-wrap{
+            position: relative;
+            height: 100%;
+            z-index: 3;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 0 5%;
+            .content{
+                width: 100%;
+                margin-top:px(-200);
+                .con-tit{
+                    &-t02{
+                        position: relative;
+                        font-size: px(28);
+                        font-weight: 700;
+                        margin-bottom: px(15);
+                        color: $baseColor;
+                    }
+                    &-t01{
+                        position: relative;
+                        font-size: px(80);
+                        font-weight: 700;
+                        color: #000;
+                        margin-bottom:px(50);
+                    }
+                }
+                .portfolio-wrap{
+                    position: relative;
+                    max-width: 1200px;
+                    margin: 0px auto;
+                    .slidewrap{
+                        display: flex;
+                        align-items: flex-start;
+                        overflow: hidden;
+                        gap: 5.6rem;
+                        margin-top:px(20);
+                        .port{
+                            &-img{
+                                width: 50%;
+                                flex-shrink: 0;
+                                border-radius: px(8);
+                                overflow: hidden;
+                                img{
+                                    width:100%;
+                                }
+
+                            }
+                            &-infotxt{
+                                display: flex;
+                                flex-direction: column;
+                                align-self: stretch;
+                                -webkit-box-pack: justify;
+                                justify-content: space-between;
+                                .port{
+                                    &-tit{
+                                        font-size: px(32);
+                                        font-weight: 700;
+                                        line-height: 175%;
+                                    }
+                                    &-subtit{
+                                        font-size: px(20);
+                                        margin-top: px(8);
+                                    }
+                                    &-keyword{
+                                        display: flex;
+                                        margin-top: px(24);
+                                        flex-wrap: wrap;
+                                        gap: px(8);
+                                        li{
+                                            padding: px(5) px(12);
+                                            color: $baseColor;
+                                            font-size: px(14);
+                                            border: 0.2rem solid rgba(134, 155, 219, 0.25);
+                                            border-radius: px(100);
+                                        }
+                                    }
+                                   
+                                }
+                                .btn-area{
+                                    display: flex;
+                                    margin-top: 2.4rem;
+                                    gap: 1.6rem;
+                                    .port-more{
+                                        font-size: px(18);
+                                        font-weight: 700;
+                                        font-family: 'Pretendard';
+                                        cursor: pointer;
+                                        min-width: 18rem;
+                                        padding: 0px px(48);
+                                        height: px(56);
+                                        display: flex;
+                                        -webkit-box-pack: center;
+                                        justify-content: center;
+                                        -webkit-box-align: center;
+                                        align-items: center;
+                                        border-radius:px(100);
+                                        border: 2px solid #869bdb;
+                                        background-color: rgba(134, 155, 219, 0.25);
+                                        color:$baseColor;
+                                        transition: width 0.3s ease 0s, background 0.3s ease 0s, color 0.3s ease 0s;
+                                        &:hover {
+                                            background-color:$baseColor;
+                                            color: rgb(34, 34, 34);
+                                        }
+                                    }
+                                }
+                            }
+                        } 
+                        
+                       
                     }
                 }
             }
