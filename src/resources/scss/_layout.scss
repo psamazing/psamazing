@@ -84,9 +84,9 @@
             flex-direction: column;
             align-items: center;
             &-mouse {
-                width:px(30);
-                height: px(45);
-                border: px(2) solid #555;
+                width:px(25);
+                height: px(35);
+                border: px(1.5) solid #555;
                 border-radius: px(100);
                 position: relative;
                 &::before {
@@ -113,7 +113,7 @@
     
     }
     .section2{
-        background:#fff;
+        background:#f9faff;
         .con-wrap{
             position: relative;
             height: 100%;
@@ -148,7 +148,7 @@
                         cursor: pointer;
                         display: flex;
                         flex-direction: column;
-                        background: #fff;
+                        background: #f9faff;
                         width: 33.3333%;
                         .t01 {
                             p{
@@ -211,7 +211,7 @@
                 display: flex;
                 align-items: center;
                 .con-tit{
-                    width:70%;
+                    width:100%;
                     &-t02{
                         position: relative;
                         font-size: px(28);
@@ -235,19 +235,33 @@
                         grid-template-columns: 1fr 1fr;
                         gap: 30px;
                         li{
+                            /*svg style*/
+                            .ico-svg {
+                                width:px(60);
+                                height:px(60); 
+                                .st0{fill:none;stroke:#fff;stroke-width:15;stroke-linecap:round;stroke-miterlimit:10;}
+                                .st1{fill:none;stroke:#fff;stroke-width:15;stroke-linecap:round;stroke-miterlimit:10;}
+                                
+                                /*animate*/
+                                #st0{stroke-dashoffset: 1500; stroke-dasharray: 1500; animation-name: svgicon; animation-duration: 1.8s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate;}
+                                #st1{stroke-dashoffset: 1500; stroke-dasharray: 1500; animation-name: svgicon; animation-duration: 1.8s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; animation-direction: alternate;}
+                                @keyframes svgicon {to{stroke-dashoffset: 0;}}
+
+                            }
+                            
                             padding: 20px;
                             color: #fff;
                             border: 1px solid rgba(255,255,255,.4);
                             background: rgba(255,255,255,0);
                             height: 100%;
                             &:nth-child(2n) {
-                                margin-top: px(60);
+                                margin-top: px(40);
                             }
                             .name{
                                 position: relative;
                                 font-size: px(20);
                                 margin-top: px(56);
-                                line-height: 160%;
+                                line-height: 220%;
                                 font-weight: 500;
                             }
                             .desc{
