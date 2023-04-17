@@ -10,17 +10,20 @@
     <script type="text/javascript" src="../resources/js/jquery-1.8.3.js"></script>
     <script type="text/javascript" src="../resources/js/jquery.fullpage.js"></script>
     <script type="text/javascript" src="../resources/js/slick.min.js"></script>
+    <script type="text/javascript" src="../resources/js/common.js"></script>
 
 <body>
     <div id="wrap">
         <header>
             <nav class="nav">
                 <h1 class="logo"><span>WEB PUBLISHER 박상아</span></h1>
-                <a class="menu-trigger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </a>
+                <button type="button" class="all-menu">
+                    <em class="icon">
+                        <span class="line"></span>
+                        <span class="line"></span>
+                    </em>
+                    <span class="hide">전체메뉴 열기</span>
+                </button>
                 <ul>
                     <li class="nav-list0"><a href="#home">HOME</a></li>
                     <li class="nav-list1"><a href="#about">ABOUT</a></li>
@@ -33,7 +36,7 @@
         <div id="fullpage">
             <div class="section section1">
                 <div class="left-tit">
-                    <p>함께 일할 퍼블리셔를</p>
+                    <p>함께 일할<br class="mo" /> 퍼블리셔를</p>
                     <p>찾고계신가요?</p>
                 </div>
                 <div class="play-bar">
@@ -487,9 +490,9 @@
             </div>
             <div class="section section5 fp-auto-height">
                 <footer>
-                    <p class="contact_con">
-                        Copyrightⓒ2023. Web Publisher 박상아. All rights reserved.<br />
-                        본 사이트는 상업적 목적이 아닌 개인 포트폴리오 사이트로 제작되었습니다.
+                    <p class="contact-con">
+                        Copyrightⓒ2023.<br class="mo"> Web Publisher 박상아. All rights reserved.<br />
+                        본 사이트는 상업적 목적이 아닌<br class="mo"> 개인 포트폴리오 사이트로 제작되었습니다.
             </div>
             </footer>
         </div>
@@ -540,57 +543,59 @@
     var h = $(window).height();
 
 
-
-    $(document).ready(function() {
-        $(".portfolio-wrap").slick({
-            dots: true,
-            arrows: true,
-            infinite: true,
-            autoplay: false,
-            slidesToShow: 1,
-            speed: 2000
-        });
-
-        $("#fullpage").fullpage({
-            responsiveWidth: 980,
-            responsiveSlides: true,
-            parallax: true,
-            navigation: true,
-            navigationPosition: "ture",
-
-            afterLoad: function(origin, destination, direction) {
-
-
-                if (destination == 2) {
-
-
-                }
-
-
-            },
-
-
-            onLeave: function(origin, destination, direction) {
-                console.log(destination);
-                //FOOTER로 인한 SECTION-TITLE 변경
-                if (destination == 4 && direction == 'down') {
-                    $('.sec3 .interval').addClass('slide_down');
-                } else {
-                    $('.sec3 .interval').removeClass('slide_down');
-                }
-            }
-        });
-
-
-
-        //풀페이지 네비게이션 넘버링
-        $("#fp-nav").wrap("<div class='f_nav_wrap'></div>");
-        //$("#fp-nav").css({"margin-top":"0"});
-        //$(".f_nav_wrap").prepend("<div class='num this'>01</div>");
-        //$(".f_nav_wrap").append("<div class='num entire'>04</div>");
-
-
+    $(function() {
+        matchMediaInit();
     });
+    // $(document).ready(function(){
+    //     $(".portfolio-wrap").slick({
+    //         dots: true,
+    //         arrows:true,
+    //         infinite: true,
+    //         autoplay:false,
+    //         slidesToShow: 1,
+    //         speed:2000
+    //     });
+
+    //     $("#fullpage").fullpage({		
+    //         responsiveWidth: 980,
+    // 		responsiveSlides: true,
+    // 		parallax: true,
+    //         navigation: true,
+    //         navigationPosition:"ture",
+
+    // 		afterLoad: function(origin, destination, direction){
+
+
+    // 				if ( destination ==  2 ){
+
+
+    // 				}
+
+
+    // 		},
+
+
+    //         onLeave: function(origin, destination, direction){
+    //             console.log(destination);
+    //             //FOOTER로 인한 SECTION-TITLE 변경
+    //             if (destination == 4 && direction == 'down') {
+    //             $('.sec3 .interval').addClass('slide_down');
+    //             } else {
+    //             $('.sec3 .interval').removeClass('slide_down');
+    //             }
+    //         }
+    //     });
+
+
+
+    // 	//풀페이지 네비게이션 넘버링
+    // 	$("#fp-nav").wrap("<div class='f_nav_wrap'></div>");
+    // 	//$("#fp-nav").css({"margin-top":"0"});
+    // 	//$(".f_nav_wrap").prepend("<div class='num this'>01</div>");
+    // 	//$(".f_nav_wrap").append("<div class='num entire'>04</div>");
+
+
+    // });
 </script>
 
 </html>

@@ -198,3 +198,8 @@
 }
 
 
+@include mq(mobile){
+    .slick-dots{
+        bottom:-40px;
+    }
+}

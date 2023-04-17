@@ -75,8 +75,8 @@ $baseColor: #869BDB;
   
   // media
   @mixin mq($screen-width) {
-    @if $screen-width == 'small' {
-      @media all and (max-width: 320px) {
+    @if $screen-width == 'mobile' {
+      @media all and (max-width: 767px) {
         @content;
       }
     } @else if $screen-width == 'fold' {
@@ -85,3 +85,16 @@ $baseColor: #869BDB;
       }
     }
   }
+
+  @mixin tablet{
+    @media (min-width: 768px) and (max-width: 1023px){
+      @content;
+    }
+  }
+
+/*반응형, 브라우저 크기가 1024px 이상일때*/
+@mixin desktop{
+  @media (min-width: $desktop){
+    @content;
+  }
+}
