@@ -4,6 +4,7 @@ const prefix = require('gulp-autoprefixer');
 const minify = require('gulp-clean-css');
 const terser = require('gulp-terser');
 const include = require('gulp-file-include');
+const data = require('gulp-data');
 const htmlbeautify = require('gulp-html-beautify');
 
 //create function
@@ -35,6 +36,12 @@ function fonts(){
     return src('src/resources/fonts/*')
     .pipe(dest('dist/resources/fonts'))
 } 
+
+//Json
+function datas(){
+    return src("src/templates/*")
+    .pipe(dest('dist/templates'))
+}
 
 //page
 function pages(){
@@ -73,5 +80,6 @@ exports.default=series(
     images,
     pages,
     fonts,
+    datas,
     watchTask
 );

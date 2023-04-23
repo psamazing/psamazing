@@ -3,8 +3,8 @@ var UI = UI || {};
 var Utils = {
   getMediaQuery: function (type) {
     return {
-      pc: window.matchMedia('(min-width:1025px)'),
-      tablet: window.matchMedia('(min-width:768px) and (max-width:1024px)'),
+      pc: window.matchMedia('(min-width:1024px)'),
+      tablet: window.matchMedia('(min-width:768px) and (max-width:1023px)'),
       mobile: window.matchMedia('all and (max-width:767px)'),
     }[type];
   },
@@ -35,15 +35,15 @@ UI.matchMedia = {
       });
     },
     matchedIsPC: function () {
-      console.log('pc');
+      //console.log('pc');
       UI.pcAni.init();
     },
     matchedIsTablet: function () {
-      console.log('tablet');
+      //console.log('tablet');
       UI.tabletAni.init();
     },
     matchedIsMobile: function () {
-      console.log('mobile');
+      //console.log('mobile');
       UI.mAni.init();
     },
   };
@@ -54,21 +54,14 @@ UI.matchMedia = {
       $('#fullpage').fullpage({
         autoScrolling: true,
         fitToSection: false,
+        anchors: ['sec01', 'sec02', 'sec03', 'sec04'],
+        menu:'#menu',
         navigation: true,
         responsive: true,
         resize: true,
         scrollOverflow: false,
         onLeave: function (index, destination, direction) {
-          //FOOTER PAGINATION STYLE
-          if (destination == 5) {
-            $('#fp-nav ul li').eq(3).children('a').addClass('show');
-            $('#fp-nav').addClass('slide_down');
-          } else {
-            $('#fp-nav ul li').eq(3).children('a').removeClass('show');
-            $('#fp-nav').removeClass('slide_down');
-          }
-  
-          $('.section [data-aos]').removeClass('aos-animate');
+
         },
         afterLoad: function (anchorLink, index) {
         },
@@ -86,42 +79,17 @@ UI.matchMedia = {
   UI.tabletAni = {
     init: function () {
       $('#fullpage').fullpage({
-        autoScrolling: true,
+        autoScrolling: false,
         fitToSection: false,
         navigation: true,
         responsive: true,
         resize: true,
         scrollOverflow: false,
         onLeave: function (index, destination, direction) {
-          //FOOTER로 인한 SECTION-TITLE 변경
-          if (destination == 5 && direction == 'down') {
-            $('.sec3 .interval').addClass('slide_down');
-          } else {
-            $('.sec3 .interval').removeClass('slide_down');
-          }
+        
   
-          // SECTION별 로고, NAV색 변경
-          if (destination == 2 || destination == 3) {
-            $('header').addClass('top_active');
-            $('#fp-nav ul li a span').addClass('dark');
-          } else {
-            $('header').removeClass('top_active');
-            $('#fp-nav ul li a span').removeClass('dark');
-          }
-  
-          //FOOTER PAGINATION STYLE
-          if (destination == 5) {
-            $('#fp-nav ul li').eq(3).children('a').addClass('show');
-            $('#fp-nav').addClass('slide_down');
-          } else {
-            $('#fp-nav ul li').eq(3).children('a').removeClass('show');
-            $('#fp-nav').removeClass('slide_down');
-          }
-  
-          $('.section [data-aos]').removeClass('aos-animate');
         },
         afterLoad: function (anchorLink, index) {
-          $('.section.active [data-aos]').addClass('aos-animate');
         },
         afterResize: function () {
           var win = $(window).width();
@@ -166,12 +134,49 @@ UI.matchMedia = {
   function matchMediaInit() {
     UI.matchMedia.init();
 
-    $(".portfolio-wrap").slick({
-        dots: true,
-        arrows:true,
-        infinite: true,
-        autoplay:false,
-        slidesToShow: 1,
-        speed:2000
-    });
+    $.ajax({
+      type:"get",
+      url:"../templates/data.json",
+      dataType:"json",
+      success: function(data){
+
+          var str =""
+              $.each(data, function(i, item){
+                  str +="<div class='slidewrap'>"
+                  str += "<div class='port-img'>"
+                  str += "<img src='../resources/images/"+item.img+"' alt="+item.name+"/>"
+                  str += "</div>"
+                  str += "<div class='port-infotxt'>"
+                  str += "<div>"
+                  str += "<h2 class='port-tit'>"+item.portTit+"</h2>"
+                  str += "<p class='port-subtit'>"+item.portSubTit+"</p>"
+                  str += "<ul class='port-keyword'>"
+
+
+                  for(let i=0; i<item.portKeyword.length; i++){
+                    str += "<li>#" + item.portKeyword[i] + "</li>"
+                  }
+
+                  str += "</ul></div>"
+                  str += "<div class='btn-area'><button type='button' class='port-more'>상세보기</button></div>"
+                  str += "</div></div>";
+              });
+             
+          $(".portfolio-wrap").append(str);
+
+          $(".portfolio-wrap").slick({
+            dots: true,
+            arrows:true,
+            infinite: true,
+            autoplay:false,
+            slidesToShow: 1,
+            fade:true,
+            speed:2000
+        });
+          
+      },
+      error:function(){
+          console.log("통신에러");
+      }
+  });
   };

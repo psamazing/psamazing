@@ -1,46 +1,42 @@
-@include mq(mobile){
-    .mo{display: block;}
+@include tablet{
+
     #wrap{
-        padding-top: pxm(100);
-        padding-bottom: pxm(0);
         .section1{
-            padding:0vw 0vw 25vw;
-            position: relative;
             .play-bar{
-                top:calc(100% - 70%);
+                top:calc(100% - 84.5%);
             }
             .left-tit{
                 @include position($p:relative,$t:0%, $l:50%);
                 width: 100%;
                 padding-top:px(270);
                 > p{
-                    font-size:px(40);
+                    font-size:px(50);
                     text-align: center;
                     line-height: 160%;
                     
                 }
             }
             .right-tit{
-                @include position($t:px(450), $l:50%);
+                @include position($t:px(550), $l:50%);
                 .typing{
-                    font-size:pxm(120);
+                    font-size:px(140);
                 }
             }
             .intro-txt{
-                @include position($t:50%, $l:0%, $b:auto);
+                @include position($t:30%, $l:0%, $b:auto);
                 width:100%;
                 p{
                     text-align: center;
-                    font-size:px(15);
-                    line-height:px(22);
+                    font-size:px(18);
+                    line-height:px(34);
                 }
             }
             .scroll-ani{
-                display: none;
+                left:42%;
             }
         }
         .section2{
-            padding:25vw 5vw;
+            padding:0vw 5vw;
             .con-wrap{
                 padding: 0;
                 .content{
@@ -89,7 +85,7 @@
         }
         .section3{
             .con-wrap{
-                padding:25vw 5vw;
+                padding:6vw 5vw;
                 .content{
                     flex-direction: column;
                     margin-top: 0;
@@ -133,7 +129,7 @@
         }
         .section4{
             .con-wrap{
-                padding:25vw 5vw 30vw;
+                padding:6vw 5vw;
                 .content{
                     margin-top: 0;
                     .con-tit{
