@@ -141,27 +141,27 @@ UI.matchMedia = {
       success: function(data){
 
           var str =""
-              $.each(data, function(i, item){
-                  str +="<div class='slidewrap'>"
-                  str += "<div class='port-img'>"
-                  str += "<img src='../resources/images/"+item.img+"' alt="+item.name+"/>"
-                  str += "</div>"
-                  str += "<div class='port-infotxt'>"
-                  str += "<div>"
-                  str += "<h2 class='port-tit'>"+item.portTit+"</h2>"
-                  str += "<p class='port-subtit'>"+item.portSubTit+"</p>"
-                  str += "<ul class='port-keyword'>"
+          $.each(data, function(i, item){
+              str +="<div class='slidewrap'>"
+              str += "<div class='port-img'>"
+              str += "<img src='../resources/images/"+item.img+"' alt="+item.name+"/>"
+              str += "</div>"
+              str += "<div class='port-infotxt'>"
+              str += "<div>"
+              str += "<h2 class='port-tit'>"+item.portTit+"</h2>"
+              str += "<p class='port-subtit'>"+item.portSubTit+"</p>"
+              str += "<ul class='port-keyword'>"
 
 
-                  for(let i=0; i<item.portKeyword.length; i++){
-                    str += "<li>#" + item.portKeyword[i] + "</li>"
-                  }
+              for(let i=0; i<item.portKeyword.length; i++){
+                str += "<li>#" + item.portKeyword[i] + "</li>"
+              }
 
-                  str += "</ul></div>"
-                  str += "<div class='btn-area'><button type='button' class='port-more'>상세보기</button></div>"
-                  str += "</div></div>";
-              });
-             
+              str += "</ul></div>"
+              str += "<div class='btn-area'><button type='button' class='port-more' onclick='portDetailOpen("+ item.id + ")'>상세보기</button></div>"
+              str += "</div></div>";
+          });
+
           $(".portfolio-wrap").append(str);
 
           $(".portfolio-wrap").slick({
@@ -172,11 +172,24 @@ UI.matchMedia = {
             slidesToShow: 1,
             fade:true,
             speed:2000
-        });
-          
+          });
       },
       error:function(){
           console.log("통신에러");
       }
   });
-  };
+};
+
+function portDetailOpen(idx){
+  if ( $('.fp-enabled').length ) {
+      // Destroy all  
+      $.fn.fullpage.setAllowScrolling(false);
+  }
+  $(".port-detail-back.detail"+idx).addClass("on");
+  $(".port-detail-wrap").addClass("on");
+}
+function portDetailClose(idx){
+  $.fn.fullpage.setAllowScrolling(true);
+  $(".port-detail-back.detail"+idx).removeClass("on");
+  $(".port-detail-wrap").removeClass("on");
+} 

@@ -10,6 +10,7 @@
     <script type="text/javascript" src="../resources/js/jquery.fullpage.js"></script>
     <script type="text/javascript" src="../resources/js/slick.min.js"></script>
     <script type="text/javascript" src="../resources/js/common.js"></script>
+    <script type="text/javascript" src="../resources/js/customscrollbar.js"></script> 
 <body>
     <div id="wrap">
         @@include('./include/header.html')
@@ -217,35 +218,12 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="port-detail-back detail1">
-                    <div class="port-detail-wrap">
-                        <div class="port-tit">
-                            <h3>포트폴리오상세</h3>
-                            <img src="../resources/images/ico_close.png" alt="닫기" onclick="portDetailClose('detail1');"/>
-                        </div>
-                        <div class="port-cont-wrap">
-                            <ul class="port-con">
-                                <li><span>사이트명</span>MHHoldings</li>
-                                <li><span>제작기간</span>2020.01 ~ 2020.03</li>
-                                <li><span>제작물</span>웹리뉴얼</li>
-                                <li><span>사이트주소</span><a href="mh_oracle/main/main.html" target="_blank" class="alink">www.mhholdings.co.kr</a></li>
-                                <li><span>사이트설명</span>엠에취홀딩스 기업사이트 리뉴얼</li>
-                            </ul>
-                            <div class="port-con">
-                                <p>-기업소개사이트를 원페이징으로 디자인해서 퍼블리싱했습니다.</p>
-                            </div>
-                            <div>
-                                <img src="../resources/images/port_mh_detail.png" style="width:100%;" alt="리뉴얼이미지"/>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>  
             <div class="section section5 fp-auto-height">
                 @@include('./include/footer.html') 
             </div> 
         </div>
+        @@include('./include/lypop.html') 
     </div>    
 </body>
 <script>
@@ -291,20 +269,21 @@ function typing(){
 var w = $(window).width();
 var h = $(window).height();
 
-function portDetailOpen(idx){
-    $(".port-detail."+idx).addClass("on");
-    $("port-detail.on .port-detail-wrap").addClass("on");
-    $("body").css("overflow","hidden");
- }
- function portDetailClose(idx){
-    $(".port-detail."+idx).removeClass("on");
-    $(".port-detail .port-detail-wrap").removeClass("on");
-    $("body").css("overflow","auto");
- } 
+
 
 
 $(function(){
     matchMediaInit();
+
+     //레이어팝업 스크롤 이벤트
+     $('.port-cont-wrap').mCustomScrollbar({
+        // 가로
+        horizontalScroll:false,
+        // 테마
+        theme:"light",
+        // 마우스휠 속도
+        mouseWheelPixels:300
+    }); 	
 });
 
 </script>    
