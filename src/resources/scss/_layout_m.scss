@@ -183,4 +183,28 @@
             }
         }
     }
+    .port-detail{
+        &-back{
+            display:none;
+            &.on{
+                padding:0;
+                .port-tit{
+                    >img{
+                        margin-top:-7.2%;
+                    }
+                }
+            }
+        }
+        &-wrap{
+            overflow-y: scroll;
+            padding: 15px 20px 15px 20px;
+            &.on{
+                border-radius: 0;
+                .port-cont-wrap{
+                    width:100%;
+                    height:auto;
+                }
+            }
+        }
+    }
 }

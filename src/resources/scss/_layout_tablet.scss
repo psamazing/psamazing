@@ -179,4 +179,23 @@
             }
         }
     }
+    .port-detail{
+        &-back{
+            display:none;
+            &.on{
+                .port-tit{
+                    >img{
+                    }
+                }
+            }
+        }
+        &-wrap{
+            &.on{
+                .port-cont-wrap{
+                    width:100%;
+                }
+            }
+        }
+    }
+
 }

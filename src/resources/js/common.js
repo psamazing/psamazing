@@ -72,6 +72,16 @@ UI.matchMedia = {
           $.fn.fullpage.setAllowScrolling(true);
         },
       });
+
+      //레이어팝업 스크롤 이벤트
+      $('.port-cont-wrap').mCustomScrollbar({
+          // 가로
+          horizontalScroll:false,
+          // 테마
+          theme:"light",
+          // 마우스휠 속도
+          mouseWheelPixels:300
+      }); 	
     },
   };
   
@@ -106,7 +116,6 @@ UI.matchMedia = {
       $(window)
         .on('scroll', function () {
           var sTop = $(this).scrollTop();
-            console.log(sTop,$('.section1').offset().top,$('.section1').height() / 1.5)
           if (sTop > $('.section1').offset().top - $('.section1').height() / 1.5) {
             $('.section1').addClass('active');
           }
@@ -184,12 +193,16 @@ function portDetailOpen(idx){
   if ( $('.fp-enabled').length ) {
       // Destroy all  
       $.fn.fullpage.setAllowScrolling(false);
+  }else{
+    
   }
   $(".port-detail-back.detail"+idx).addClass("on");
   $(".port-detail-wrap").addClass("on");
 }
 function portDetailClose(idx){
-  $.fn.fullpage.setAllowScrolling(true);
+  if ( $('.fp-enabled').length ) {
+    $.fn.fullpage.setAllowScrolling(true);
+  }
   $(".port-detail-back.detail"+idx).removeClass("on");
   $(".port-detail-wrap").removeClass("on");
 } 

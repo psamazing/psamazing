@@ -473,6 +473,7 @@
 
 .port-detail{
     &-back{
+        display:none;
         &.on{
             display: block;
             @include position($p:'fixed',$l:0,$t:0);
@@ -484,7 +485,7 @@
         }
     }
     &-wrap{
-        display:block; 
+        display:none; 
         position: relative; 
         margin: 0 auto; 
         padding:15px 26px 15px 26px;
@@ -514,6 +515,9 @@
                 height:600px;
                 width:760px;
                 overflow-x:hidden;
+                img{
+                    width:100%;
+                }
                 .con-list{
                     margin-bottom: px(30);
                     p{
