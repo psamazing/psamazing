@@ -5,7 +5,12 @@
         "name": "로그인플러스",
         "portTit": "Responsive Web",
         "portSubTit": "로그인플러스 사이트 리뉴얼",
-        "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2022.12 ~ 2023.2",
+        "portUrl": "https://psamazing.github.io/hectoino/lop/main.html",
+        "url":"https://loginplus.co.kr/",
+        "portExplain" : "개인정보 휴대폰 번호로 안전하게 보호하는 사이트 소개 페이지",
+        "portDetailimg" : ["port_lop_detail.png"]
     },
     {
         "id": "14",
@@ -13,7 +18,12 @@
         "name": "간편결제매니저",
         "portTit": "Responsive Web",
         "portSubTit": "간편결제매니저 사이트 리뉴얼",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2022.10 ~ 2023.1",
+        "portUrl": "https://psamazing.github.io/hectoino/spm/main.html",
+        "url":"https://sepay.org/",
+        "portExplain" : "개인 ID/PW 저장하여 안전하고 편리하게 이용할 수 있는 사이트 소개",
+        "portDetailimg" : ["port_spm_detail.png"]
     },
     {
         "id": "13",
@@ -21,23 +31,36 @@
         "name": "내정보지키미",
         "portTit": "Mobile Web",
         "portSubTit": "내정보지키미 앱 리뉴얼",
-        "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2022.7 ~ 2022.10",
+        "portUrl": "https://safemyinfo.kr/",
+        "url":"https://safemyinfo.kr/",
+        "portExplain" : "인터넷모니터링,개인정보노출피해예방,불법와이파이 체크 하는 서비스 웹앱 리뉴얼",
+        "portDetailimg" : ["port_safe.png"]
     },
     {
         "id": "12",
-        "img": "port_frog_mobile.png",
+        "img": "port_apt.png",
         "name": "아파트청약케어",
         "portTit": "Mobile Web",
         "portSubTit": "아파트청약케어 모바일 웹 신규",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2022.6 ~ 2022.7",
+        "portUrl": "https://psamazing.github.io/hectoino/apt/main_v2.html",
+        "url":"https://aptcare.co.kr/",
+        "portExplain" : "청약당첨예상,아파트추천서비스등을 제공하는 소개페이지 모바일웹 사이트 신규 구축",
+        "portDetailimg" : ["port_apt_detail.png"]
     },
     {
         "id": "11",
-        "img": "port_frog_mobile.png",
+        "img": "port_health.png",
         "name": "세이프캐시/건강지키미",
         "portTit": "Mobile Web",
         "portSubTit": "세이프캐시/건강지키미 마이데이터 웹앱 프로세스변경",
-        "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2022.3 ~ 2022.6",
+        "portExplain" : "내 계좌/보험 연동하여 최적화된 건강/은행계좌 관리하는 웹앱 프로세스 변경",
+        "portDetailimg" :["port_health.png"]
     },
     {
         "id": "10",
@@ -45,7 +68,10 @@
         "name": "신한은행 쏠탭 구축",
         "portTit": "Responsive Tablet",
         "portSubTit": "신한은행 쏠탭 구축",
-        "portKeyword":  ["퍼블리싱50%","HTML","CSS","Javascript","jQuery","WEBSQURE"]
+        "portKeyword": ["퍼블리싱50%","HTML","CSS","Javascript","jQuery","WEBSQURE"],
+        "portDate": "2021.9 ~ 2022.1",
+        "portExplain" : "웹스퀘어 툴을 사용하여 태블릿에서 사용할 화면을 퍼블리싱",
+        "portDetailimg" : ["port_shinhan.png"]
     },
     {
         "id": "9",
@@ -53,7 +79,12 @@
         "name": "청개구리주식스쿨",
         "portTit": "Responsive Web",
         "portSubTit": "청개구리주식스쿨 리뉴얼",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2021.5 ~ 2021.7",
+        "portUrl": "https://psamazing.github.io/frog/frogschoolnew/main.html",
+        "url":"https://frogschool.co.kr/",
+        "portExplain" : "전문가의 자산 증식 전략을 경험해볼 수 있도록 무료상담신청과 영상관련정보 , 인재채용 , 최신소식을 전달받을 수 있습니다.",
+        "portDetailimg" : ["port_frogschool_detail.png"]
     },
     {
         "id": "8",
@@ -61,7 +92,12 @@
         "name": "청개구리파트너스",
         "portTit": "Responsive Web",
         "portSubTit": "청개구리파트너스 홈페이지 신규 구축",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2021.3 ~ 2021.4",
+        "portUrl": "https://psamazing.github.io/frog/partners/index.html",
+        "url":"http://smartcpa.co.kr/",
+        "portExplain" : "전문가의 자산 증식 전략을 경험해볼 수 있도록 무료상담신청과 영상관련정보 , 인재채용 , 최신소식을 전달받을 수 있습니다.",
+        "portDetailimg" : ["port_partners_detail.png"]
     },
     {
         "id": "7",
@@ -69,7 +105,12 @@
         "name": "청개구리투자자문",
         "portTit": "Mobile Web",
         "portSubTit": "청개구리투자자문 신규",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2021.3 ~ 2021.4",
+        "portUrl": "https://psamazing.github.io/frog/froginvest/index.html",
+        "url":"https://frogschool.co.kr/",
+        "portExplain" : "PASS와 연동하여 전자계약서를 모바일로 작성 할 수 있도록 구축했습니다.",
+        "portDetailimg" :["port_frog_mobile.png"]
     },
     {
         "id": "6",
@@ -77,7 +118,12 @@
         "name": "노다지",
         "portTit": "Adaptive Web",
         "portSubTit": "노다지 리뉴얼",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2021.2 ~ 2021.3",
+        "portUrl": "https://psamazing.github.io/frog/nodaji/index.html",
+        "url":"https://nodaji.co.kr/",
+        "portExplain" : "주식투자에 있어 수익을 얻을 수 있는명확한 자료 제공 및 종목추천, 주식교육콘텐츠, 전문가 분석제공등 다양한 정보를 확인 할 수 있습니다. ",
+        "portDetailimg" : ["port_nodaji_detail.png"]
     },
     {
         "id": "5",
@@ -85,7 +131,12 @@
         "name": "디자인스펙",
         "portTit": "Responsive Web",
         "portSubTit": "디자인스펙 홈페이지 신규 구축",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2021.2 ~ 2021.3",
+        "portUrl": " https://psamazing.github.io/frog/design/html",
+        "url":"http://www.designspec.co.kr/",
+        "portExplain" : "고객의 니즈와 최신트렌드에 알맞은 랜딩페이지를 제작하여 디자인스펙 사이트에 결과물을 소개했습니다.",
+        "portDetailimg" : ["port_design_detail.png"]
     },
     {
         "id": "4",
@@ -93,7 +144,12 @@
         "name": "이메딕 관리자 페이지",
         "portTit": "Mobile Web",
         "portSubTit": "이메딕 관리자 신규 구축",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
+        "portDate": "2020.03 ~ 2020.07",
+        "portUrl": "https://psamazing.github.io/mh/emedic/index.html",
+        "url":"www.emedic.co.kr",
+        "portExplain" : "이메딕과 아이메딕 관리자 사이트 모바일 버전",
+        "portDetailimg" : ["port_emedic_m_detail.png","port_emedic_m_detail1.png","port_emedic_m_detail2.png","port_emedic_m_detail3.png"]
     },
     {
         "id": "3",
@@ -101,7 +157,12 @@
         "name": "이메딕",
         "portTit": "Adaptive Web",
         "portSubTit": "이메딕 웹 리뉴얼",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery","JSP"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery","JSP"],
+        "portDate": "2018.03 ~ 2019.09",
+        "portUrl": "https://psamazing.github.io/mh/emedic/index.html",
+        "url":"www.emedic.co.kr",
+        "portExplain" : "초/중/고등학교에 필수의약품 정보와 질환정보를 엄선하여 수록하고 보건교육시 활용할 수 있는 다양한 자료와 서비스를 제공합니다.",
+        "portDetailimg" : ["port_emedic_detail.png"]
     },
     {
         "id": "2",
@@ -109,7 +170,12 @@
         "name": "아이메딕",
         "portTit": "Adaptive Web",
         "portSubTit": "아이메딕 웹 리뉴얼",
-        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery","JSP"]
+        "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery","JSP"],
+        "portDate": "2020.07 ~ 2020.11",
+        "portUrl": "https://psamazing.github.io/mh/imedic/main/main.html",
+        "url":"www.i-medic.co.kr",
+        "portExplain" : "산업체에 필수의약품 정보와 질환정보를 엄선하여 수록하고 보건교육시 활용할 수 있는 다양한 자료와 서비스를 제공합니다.",
+        "portDetailimg" : ["port_imedic_detail.png"]
     },
     {
         "id": "1",
@@ -119,10 +185,10 @@
         "portSubTit": "엠에취홀딩스 신규구축",
         "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery","JSP"],
         "portDate": "2020.01 ~ 2020.03",
-        "portUrl": "www.mhholdings.co.kr",
+        "portUrl": "https://psamazing.github.io/mh/mh_holdings/main/main.html",
+        "url":"www.mhholdings.co.kr",
         "portExplain" : "기업소개사이트를 원페이징으로 디자인해서 퍼블리싱했습니다.",
-        "portDetailimg" : "port_mh_detail.png"
-
+        "portDetailimg" : ["port_mh_detail.png"]
     }
 
 ]

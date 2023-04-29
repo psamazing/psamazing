@@ -31,7 +31,7 @@
                         <li>Collaborate</li>
                         <li>Skills</li>
                     </ul>  
-                    <p class="typing"></p>   
+<                    <p class="typing"></p>   
                 </div>  
                 <div class="intro-txt">
                     <p>
@@ -232,6 +232,8 @@ var typingIdx=0;
 var liIndex = 0;
 var liLength = $(".right-tit-keyword>li").length;
 
+var portFolioData = new Array();
+
 // 타이핑될 텍스트를 가져온다 
 var typingTxt = $(".right-tit-keyword>li").eq(liIndex).text(); 
 typingTxt=typingTxt.split(""); // 한글자씩 자른다. 
@@ -269,11 +271,41 @@ function typing(){
 var w = $(window).width();
 var h = $(window).height();
 
+function scrollMenu(e) {
+     
+     e.preventDefault();
+     
+
+     var idxNum = $('.nav ul li a').index($(this));
+     console.log(idxNum);
+
+     if(idxNum == '2'){
+         var topNum = $('section').eq(idxNum).offset().top -300;
+     }else if(idxNum == '4'){
+        location.href = "guide.html";
+     }else{
+         var topNum = $('section').eq(idxNum).offset().top -20;
+     }
+     
+    
+     $('html, body').stop().animate({
+     scrollTop : topNum + "px"
+     }, 1000);
+
+     $('.nav ul li a').filter('.active').removeClass('active');
+     $('.nav ul li.nav_list'+idxNum+' a').addClass('active');
+
+     console.log($('.nav ul li.nav_list'+idxNum+' a'));
+ }
 
 
 
 $(function(){
     matchMediaInit();
+
+    //네비메뉴클릭이벤트 
+    $('.nav ul li a').on('click', scrollMenu);
+
 });
 
 </script>    

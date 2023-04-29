@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../resources/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Guide Calendar</title>
+</head>
+
+<body>
+    <header class="g_detail_header">
+        <h1>UI / UX guide - Calendar</h1>
+    </header>
+    <section class="g_detail_section">
+        <p class="g_detail_title">01 Calendar</p>
+        <div class="date-choice-wrap">
+            <div class="date-choice-click">
+                <i class="fa-calendar-alt"></i>
+                <input type="text" placeholder="날짜선택" class="date-choice input-css" />
+            </div>
+            <div class="lypop_calendar ">
+                <div id="calendar" class="calendar-wrap"></div>
+            </div>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="../resources/js/jquery-1.8.3.js"></script>
+<script>
+    $(function() {
+        const week = new Array("일", "월", "화", "수", "목", "금", "토");
+
+        //기준년도와 월 
+        let year
+        let month
+        let day
+
+        //기준년도와 월의 첫번째날과 마지막날
+        let firstDate;
+        let lastDate;
+        let firstDay;
+
+        //오늘
+        let today;
+
+        const setCalendar = function() {
+            year = new Date().getFullYear();
+            month = new Date().getMonth();
+            day = new Date().getDate();
+            day = ("0" + day).slice(-2);
+            today = year + "-" + ("0" + (month + 1)).slice(-2) + "-" + day;
+
+            //캘린더 현재 년월과 좌우 화살표 설정
+            const dateContainer = $("<ul/>", {
+                "class": "calendar-head"
+            })
+
+            //이전월 버튼 
+            const prevBtnLi = $("<li/>");
+            const prevBtn = $("<button />", {
+                "class": "btnmonth btn-prev"
+            });
+            const prevBtnI = $("<i/>", {
+                "class": "fas fa-chevron-circle-left"
+            });
+            prevBtnLi.append(prevBtn);
+            prevBtn.append(prevBtnI);
+
+            const currentDateLi = $("<li />", {
+                "class": "currentMonth"
+            });
+
+
+            //다음월 버튼
+            const nextBtnLi = $("<li/>");
+            const nextBtn = $("<button />", {
+                "class": "btnmonth next-prev"
+            });
+            const nextBtnI = $("<i/>", {
+                "class": "fas fa-chevron-circle-right"
+            });
+
+
+            nextBtnLi.append(nextBtn);
+            nextBtn.append(nextBtnI);
+            dateContainer.append(prevBtnLi).append(currentDateLi).append(nextBtnLi);
+            $("#calendar").append(dateContainer);
+
+            //일자 
+            const weekUl = $("<ul/>", {
+                "class": "weekul"
+            });
+            for (let i = 0; i < week.length; i++) {
+                const weekLi = $("<li>", {
+                    text: week[i],
+                    "class": "weekli"
+                });
+                weekUl.append(weekLi);
+            }
+            $("#calendar").append(weekUl);
+
+            setCalendarDay();
+
+            prevBtn.on("click", function() {
+                month = month - 1;
+                if (month < 0) {
+                    month = 11;
+                    year = year - 1;
+                }
+                setCalendarDay();
+            });
+
+            nextBtn.on("click", function() {
+                month = month + 1;
+                if (month == 12) {
+                    month = 0;
+                    year = year + 1;
+                }
+                setCalendarDay();
+            });
+
+            //선택한날짜,선택완료 버튼 클래스 지정 
+            const choiceDay = $("<div/>", {
+                "class": "choice-day-wrap"
+            });
+            const choiceText = $("<span/>", {
+                "class": "choice-text",
+                text: "선택한날짜",
+            });
+            const choiceInput = $("<input/>", {
+                "class": "choice-input"
+            });
+            const choiceBtn = $("<input/>", {
+                "type": "submit",
+                "class": "choice-btn",
+                "value": "선택완료"
+            });
+
+            $("#calendar").append(choiceDay);
+            $(".choice-day-wrap").append(choiceText);
+            $(".choice-day-wrap").append(choiceInput);
+            $(".choice-day-wrap").append(choiceBtn);
+
+            //선택완료 클릭 이벤트
+            $(".choice-btn").on("click", function() {
+                //console.log($(".choice-input").val());
+                $(".date-choice").val($(".choice-input").val());
+                $(".lypop_calendar").removeClass("on");
+            });
+        }
+
+
+        const setCalendarDay = function() {
+            $(".day").remove();
+            firstDate = new Date(year, month, 1).getDate();
+            lastDate = new Date(year, month + 1, 0).getDate();
+            firstDay = new Date(year, month, 1).getDay();
+            $(".currentMonth").html(year + "년 " + (month + 1) + "월");
+
+            const dayContainer = $("<ul/>", {
+                "class": "day"
+            });
+
+            let c = 0;
+            let d = 1;
+
+            for (c; c < firstDay; c++) {
+                dayContainer.append($("<li/>"));
+            }
+
+            for (d; d <= lastDate; d++) {
+
+                const dd = ("0" + d).slice(-2);
+                const liDate = year + "-" + ("0" + (month + 1)).slice(-2) + "-" + dd;
+                const week = new Date(liDate).getDay();
+                const days = $("<li />", {
+                    text: d,
+                    "data-date": liDate
+                });
+                if (today == liDate) {
+                    days.addClass("today");
+                }
+                if (week == 0) {
+                    days.addClass("sunday");
+                }
+                if (week == 6) {
+                    days.addClass("satday");
+                }
+
+                dayContainer.append(days);
+            }
+
+            $("#calendar").append(dayContainer);
+
+            //일자 클릭 이벤트 
+            $(".day > li").on("click", function() {
+                //클릭한 날짜 클래스 지정
+                if ($(".day > li").hasClass("on")) {
+                    $(".day > li").removeClass("on");
+                }
+                $(this).addClass("on");
+
+
+                //$(".date-choice").val($(this).data("date")).trigger("change");
+                $(".choice-input").val($(this).data("date")).trigger("change");
+                $(".choice-input").attr("readonly", true);
+            });
+        }
+        //날짜선택 input 박스 클릭이벤트
+        $(".date-choice").on("click", function() {
+            if ($(".lypop_calendar").hasClass("on")) {
+                $(".lypop_calendar").removeClass("on");
+            } else {
+                $(".lypop_calendar").addClass("on");
+            }
+        });
+
+        //$(".date-choice").on("change",function(){
+        //console.log($(this).val());
+        //});
+
+        //날짜영역외에 클릭시 닫기 이벤트             
+        $("body").on("click", function(e) {
+            if ($(".lypop_calendar").has(e.target).length == 0 && !$(".date-choice").is(e.target)) {
+                $(".lypop_calendar").removeClass("on");
+            }
+        });
+
+        const init = function() {
+            $(".currentMonth").html(year + "년" + (month + 1) + "월")
+            setCalendar();
+        }
+
+        init();
+    });
+</script>
+
+</html>

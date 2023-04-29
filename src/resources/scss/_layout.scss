@@ -513,11 +513,8 @@
             }
             .port-cont-wrap{
                 height:600px;
-                width:760px;
+                width:750px;
                 overflow-x:hidden;
-                img{
-                    width:100%;
-                }
                 .con-list{
                     margin-bottom: px(30);
                     p{
@@ -525,10 +522,13 @@
                         font-size:px(15);
                     }
                 }
-                .mobile-ul{
+                .portDetailImgs{
                     display: flex;
                     flex-wrap: wrap;
                     gap:20px;
+                    img{
+                        max-width:100%;
+                    }
                 }
                 .port-con{
                     padding: 20px 5px;
@@ -559,6 +559,12 @@
                             width: 100px;
                             flex-shrink: 0;
                             font-weight: 600;
+                        }
+                        >span.portli{
+                            width:80%;
+                            &.portdate{
+                                font-weight: 400;
+                            }
                         }
                         .port-info{
                             width:80%;

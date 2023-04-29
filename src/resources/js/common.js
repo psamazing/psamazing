@@ -150,7 +150,10 @@ UI.matchMedia = {
       success: function(data){
 
           var str =""
+          var p=0;
           $.each(data, function(i, item){
+
+            portFolioData[item.id] = item;
               str +="<div class='slidewrap'>"
               str += "<div class='port-img'>"
               str += "<img src='../resources/images/"+item.img+"' alt="+item.name+"/>"
@@ -160,8 +163,6 @@ UI.matchMedia = {
               str += "<h2 class='port-tit'>"+item.portTit+"</h2>"
               str += "<p class='port-subtit'>"+item.portSubTit+"</p>"
               str += "<ul class='port-keyword'>"
-
-
               for(let i=0; i<item.portKeyword.length; i++){
                 str += "<li>#" + item.portKeyword[i] + "</li>"
               }
@@ -169,6 +170,7 @@ UI.matchMedia = {
               str += "</ul></div>"
               str += "<div class='btn-area'><button type='button' class='port-more' onclick='portDetailOpen("+ item.id + ")'>상세보기</button></div>"
               str += "</div></div>";
+              p++;
           });
 
           $(".portfolio-wrap").append(str);
@@ -196,13 +198,33 @@ function portDetailOpen(idx){
   }else{
     
   }
-  $(".port-detail-back.detail"+idx).addClass("on");
+
+  const data = portFolioData[idx];
+  
+  $(".portDetailImgs").html('');
+
+  $(".port-detail-back").addClass("on");
   $(".port-detail-wrap").addClass("on");
+  $(".port-tit > h3").text(data.name);
+  $(".portdate").text(data.portDate);
+  $(".alink").attr("href",data.portUrl);
+  $(".alink").text(data.url);
+  $(".portexplain").text(data.portExplain);
+
+  for(var i=0; i<data.portDetailimg.length; i++){
+    const img = $("<img />", {
+      "src" : "../resources/images/"+data.portDetailimg[i],
+      "alt" : data.name
+    });
+    $(".portDetailImgs").append(img);
+
+  }
+
 }
-function portDetailClose(idx){
+function portDetailClose(){
   if ( $('.fp-enabled').length ) {
     $.fn.fullpage.setAllowScrolling(true);
   }
-  $(".port-detail-back.detail"+idx).removeClass("on");
+  $(".port-detail-back").removeClass("on");
   $(".port-detail-wrap").removeClass("on");
 } 
