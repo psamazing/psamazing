@@ -59,6 +59,8 @@
         "portSubTit": "세이프캐시/건강지키미 마이데이터 웹앱 프로세스변경",
         "portKeyword": ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
         "portDate": "2022.3 ~ 2022.6",
+        "portUrl": "https://myhm.co.kr/",
+        "url":"https://myhm.co.kr/",
         "portExplain" : "내 계좌/보험 연동하여 최적화된 건강/은행계좌 관리하는 웹앱 프로세스 변경",
         "portDetailimg" :["port_health.png"]
     },
@@ -133,7 +135,7 @@
         "portSubTit": "디자인스펙 홈페이지 신규 구축",
         "portKeyword":  ["퍼블리싱100%","HTML","CSS","Javascript","jQuery"],
         "portDate": "2021.2 ~ 2021.3",
-        "portUrl": " https://psamazing.github.io/frog/design/html",
+        "portUrl": "http://www.designspec.co.kr/",
         "url":"http://www.designspec.co.kr/",
         "portExplain" : "고객의 니즈와 최신트렌드에 알맞은 랜딩페이지를 제작하여 디자인스펙 사이트에 결과물을 소개했습니다.",
         "portDetailimg" : ["port_design_detail.png"]
